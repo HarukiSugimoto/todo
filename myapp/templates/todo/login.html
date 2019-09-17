@@ -1,0 +1,14 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<div class="box1">
+<h5 class='login'>ログイン</h5>
+<form method="POST" class="login-form">{% csrf_token %}
+    <p>メールアドレス　：　{{form.mail_address}}</p>
+    <p>パスワード　：　{{form.password}}</p>
+<div class='log'>
+<button type="submit">ログインする</button>
+</div>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,92 @@
+#header {
+    text-align: right;
+    background-color: aquamarine;
+    height: 60px;
+}
+ 
+.head {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 35px;
+}
+ 
+nav ul li {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 25px;
+}
+
+.box{
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.box:before, .box:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.box:before {
+    left: 10px;
+}
+.box:after {
+    right: 10px;
+}
+.box p {
+    text-align: center;
+    margin: 0; 
+    padding: 5px;
+}
+.register {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 25px;
+
+}
+.save {
+    text-align: center;
+    padding: 5px;
+}
+.box1{
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.box1:before, .box1:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.box1:before {
+    left: 10px;
+}
+.box1:after {
+    right: 10px;
+}
+.box1 p {
+    text-align: center;
+    margin: 0; 
+    padding: 5px;
+}
+.login {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 25px;
+}
+.log {
+    text-align: center;
+    padding: 5px;
+}
