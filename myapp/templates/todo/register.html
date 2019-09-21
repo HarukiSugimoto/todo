@@ -1,6 +1,7 @@
 {% extends 'todo/base.html' %}
 
 {% block content %}
+
 <div class="box">
 <h5 class='register'>新規登録</h5>
 <form method="POST" class="register-form">{% csrf_token %}
@@ -8,8 +9,15 @@
     <p>メールアドレス　：　{{form.mail_address}}</p>
     <p>パスワード　：　{{form.password}}</p>
 <div class='save'>
-<button type="submit">登録する</button>
+<button type="submit" name='register'>登録する</button>
 </div>
 </form>
 </div>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 {% endblock %}
