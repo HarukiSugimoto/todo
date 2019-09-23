@@ -69,7 +69,8 @@ class Schedule(models.Model):
     user_name = models.CharField(max_length=10)
     year = models.CharField(max_length=2, choices=Year_Choice)
     month = models.CharField(max_length=2, choices=Month_Choice)
-    date = models.CharField(max_length=2, choices=Date_Choice)
+    day = models.CharField(max_length=2, choices=Date_Choice)
+    date = models.DateTimeField()
     action = models.TextField()
 
     def __str__(self):

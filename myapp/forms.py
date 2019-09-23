@@ -14,4 +14,4 @@ class RegisterForm(forms.ModelForm):
 class ScheduleForm(forms.ModelForm):
     class Meta:
         model = Schedule
-        fields = ('user_name', 'year', 'month', 'date', 'action')
+        fields = ('user_name', 'year', 'month', 'day', 'action')

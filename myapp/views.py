@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import LoginForm, RegisterForm, ScheduleForm
 from .models import Register, Schedule
 from django.contrib import messages
-
+from django.utils import timezone
 # Create your views here.
 def login(request):
     if request.method == "POST":
@@ -65,20 +65,21 @@ def myschedule(request, username):
         username = username
         year = request.POST.get('year')
         month = request.POST.get('month')
-        date = request.POST.get('date')
+        day = request.POST.get('day')
         action = request.POST.get('action')
-        schedule_register(username, year, month, date, action)
-        return redirect('home')
+        date = "{year}-{month}-{day}".format(year=year, month=month, day=day)
+        schedule_register(username, year, month, day, date, action)
+        return redirect('mypage', username=username)
 
     else:
         form = ScheduleForm()
         return render(request, 'todo/schedule_register.html', {'form': form, 'name': username})
 
-def schedule_register(username, year, month, date, action):
-    schedule = Schedule(user_name=username, year=year, month=month, date=date, action=action)
+def schedule_register(username, year, month, day, date, action):
+    schedule = Schedule(user_name=username, year=year, month=month, day=day, date=date, action=action)
     schedule.save()
         
 def schedule_check(request, username):
-    account = Schedule.objects.filter(user_name=username).order_by('year', 'month', 'date')
+    account = Schedule.objects.filter(user_name=username).order_by('date')
     return render(request, 'todo/schedule_check.html', {'lists': account, 'name': username})
 
