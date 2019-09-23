@@ -3,19 +3,20 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <title>ToDo Application</title>
+    <title>ToDoアプリ</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/todo.css' %}">
   </head>
   <body>
       <div id='header'>
-        <p class="head">ToDo Application</p>
+        <p class="head">ToDoアプリ</p>
         <nav>
           <ul>
-            <li><a href="{% url 'register' %}">New Account</a></li>
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'mypage' username=name %}">Home</a></li>
+            <li><a href="{% url 'schedule_register' username=name %}">Create Schedule</a></li>
+            <li><a href="{% url 'schedule_check' username=name %}">Check Schedule</a></li>
+            <li><a href="{% url 'home' %}">Logout</a></li>
           </ul>
         <nav>
       </div>

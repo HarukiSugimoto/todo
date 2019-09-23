@@ -1,0 +1,14 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<div　>
+        <p class='aaa'>Welcome To ToDo Application!!</p>
+        <p class='aaa'>If you wanna use this application, you must register.</p>
+    </div>
+    <div class='button'>
+    <ul>
+        <li class='list1'><a href="{% url 'login'%}" class="btn-flat-simple"><i class="fa fa-caret-right"></i> login your account</a></li>
+        <li class='list2'><a href="{% url 'register'%}" class="btn-flat-simple"><i class="fa fa-caret-right"></i> create new account</a></li>
+    </ul>
+    </div>
+{% endblock %}

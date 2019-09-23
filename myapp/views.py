@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import LoginForm, RegisterForm
-from .models import Register
+from .forms import LoginForm, RegisterForm, ScheduleForm
+from .models import Register, Schedule
 from django.contrib import messages
 
 # Create your views here.
@@ -15,11 +15,11 @@ def login(request):
             if str(login_password) == str(password):
                 return redirect('mypage', username=name)
             else:
-                messages.error(request, 'パスワードが違います。')
+                messages.error(request, 'The password in incorrect')
                 form = LoginForm()
                 return render(request, 'todo/login.html', {'form': form})
         else:
-            messages.error(request, '　そのメールアドレスは登録されていません。')
+            messages.error(request, "Don't register the mail-addresws")
             form = LoginForm()
             return render(request, 'todo/login.html', {'form': form})
     else:
@@ -32,22 +32,22 @@ def register(request):
         add = request.POST.get('mail_address')
         password = request.POST.get('password')
         if Register.objects.filter(user_name=str(user)).exists():
-            messages.error(request, 'すでに使われている名前です。')
+            messages.error(request, 'Already the name exists')
             form = RegisterForm()
             return render(request, 'todo/register.html', {'form': form})
         elif Register.objects.filter(mail_address=str(add)).exists():
-            messages.error(request, 'すでに登録されているメールアドレスです。')
+            messages.error(request, 'Already the mail-address exists')
             form = RegisterForm()
             return render(request, 'todo/register.html', {'form': form})
         else:
             confirm(name=user, address=add, password=password)
-            return render(request, 'todo/base.html', {})
+            return render(request, 'todo/mypage.html', {'name': user})
     else:
         form = RegisterForm()
         return render(request, 'todo/register.html', {'form': form})
 
 def home(request):
-    return render(request, 'todo/base.html', {})
+    return render(request, 'todo/firstpage.html', {})
 
 def confirm(name, address, password):
     register = Register(user_name=str(name), mail_address=str(address), password=str(password))
@@ -58,4 +58,27 @@ def mypage(request, username):
     name = account.user_name
     add = account.mail_address
     password = account.password
-    return render(request, 'todo/mypage.html', {'name': name, 'add': add, 'pass': password})
+    return render(request, 'todo/mypage.html', {'name': name})
+
+def myschedule(request, username):
+    if request.method == 'POST':
+        username = username
+        year = request.POST.get('year')
+        month = request.POST.get('month')
+        date = request.POST.get('date')
+        action = request.POST.get('action')
+        schedule_register(username, year, month, date, action)
+        return redirect('home')
+
+    else:
+        form = ScheduleForm()
+        return render(request, 'todo/schedule_register.html', {'form': form, 'name': username})
+
+def schedule_register(username, year, month, date, action):
+    schedule = Schedule(user_name=username, year=year, month=month, date=date, action=action)
+    schedule.save()
+        
+def schedule_check(request, username):
+    account = Schedule.objects.filter(user_name=username).order_by('year', 'month', 'date')
+    return render(request, 'todo/schedule_check.html', {'lists': account, 'name': username})
+

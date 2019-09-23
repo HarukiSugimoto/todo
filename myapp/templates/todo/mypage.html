@@ -1,8 +1,14 @@
-{% extends 'todo/base.html' %}
+{% extends 'todo/mypage_base.html' %}
 
 {% block content %}
-<p>成功</p>
-<p>{{name}}</p>
-<p>{{add}}</p>
-<p>{{pass}}</p>
+<div　>
+    <p class='aaa'>Thank You For Registering, {{name}} !!</p>
+    <p class='aaa'>In this application, you can manage your schedule!</p>
+</div>
+<div class='button'>
+<ul>
+    <li class='list1'><a href="{% url 'schedule_register' username=name %}" class="btn-flat-simple"><i class="fa fa-caret-right"></i> Create Schedule</a></li>
+    <li class='list2'><a href="{% url 'schedule_check' username=name %}" class="btn-flat-simple"><i class="fa fa-caret-right"></i> Check Schedule</a></li>
+</ul>
+</div>
 {% endblock %}

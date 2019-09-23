@@ -1,0 +1,17 @@
+{% extends 'todo/mypage_base.html' %}
+
+{% block content %}
+<form method="POST">{% csrf_token %}
+    <div class='schedule'>
+    <ul class='date'>
+        <li>Year : {{form.year}}</li>
+        <li>Month　：　{{form.month}}</li>
+        <li>Day　：　{{form.date}}</li>
+    </ul>
+</div>
+<div class='act'>
+    <p>Plan　：　{{form.action}}</p>
+</div>
+<button type="submit" class='touroku'>Create</button>
+</form>
+{% endblock %}

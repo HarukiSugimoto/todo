@@ -1,0 +1,23 @@
+{% extends 'todo/mypage_base.html' %}
+
+{% block content %}
+<div class='tablefield'>
+<table border="1">
+    <caption class='title'>{{name}}'s Schedule</caption>
+    <tr>
+        <th>Year</th>
+        <th>Month</th>
+        <th>Day</th>
+        <th class='action'>Plan</th>
+    </tr>
+    {% for list in lists %}
+    <tr>
+        <td>{{list.year}}</td>
+        <td>{{list.month}}</td>
+        <td>{{list.date}}</td>
+        <td>{{list.action}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}
