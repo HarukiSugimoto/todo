@@ -17,162 +17,324 @@ nav ul li {
     margin-right: 25px;
 }
 
-.box{
-    margin:2em 35em;
-    position: relative;
-    padding: 0.5em 0.5em;
-    border-top: solid 2px black;
-    border-bottom: solid 2px black;
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+    .box{
+        margin:2em 35em;
+        position: relative;
+        padding: 0.5em 0.5em;
+        border-top: solid 2px black;
+        border-bottom: solid 2px black;
+    }
+    .box:before, .box:after{
+        content: '';
+        position: absolute;
+        top: -10px;
+        width: 2px;
+        height: -webkit-calc(100% + 20px);
+        height: calc(100% + 20px);
+        background-color: black;
+    }
+    .box:before {
+        left: 10px;
+    }
+    .box:after {
+        right: 10px;
+    }
+    .box p {
+        text-align: center;
+        margin: 0; 
+        padding: 5px;
+    }
+    .register {
+        text-align: center;
+        font-size: 25px;
+        margin-top: 25px;
+    
+    }
+    .save {
+        text-align: center;
+        padding: 5px;
+    }
+    .box1{
+        margin:2em 35em;
+        position: relative;
+        padding: 0.5em 1.5em;
+        border-top: solid 2px black;
+        border-bottom: solid 2px black;
+    }
+    .box1:before, .box1:after{
+        content: '';
+        position: absolute;
+        top: -10px;
+        width: 2px;
+        height: -webkit-calc(100% + 20px);
+        height: calc(100% + 20px);
+        background-color: black;
+    }
+    .box1:before {
+        left: 10px;
+    }
+    .box1:after {
+        right: 10px;
+    }
+    .box1 p {
+        text-align: center;
+        margin: 0; 
+        padding: 5px;
+    }
+    .login {
+        text-align: center;
+        font-size: 25px;
+        margin-top: 25px;
+    }
+    .log {
+        text-align: center;
+        padding: 5px;
+    }
+    table th {/*table内のthに対して*/
+        padding: 5px;/*上下左右10pxずつ*/
+        text-align: center;
+        background: skyblue;
+      }
+      
+      table td {/*table内のtdに対して*/
+        padding: 3px 10px;/*上下3pxで左右10px*/
+      }
+    .action {
+        width: 500px;
+    }
+    table {
+        text-align: center;
+        margin-right: 250px;
+    
+    }
+    tr:nth-child(odd) {
+        background-color:  #fffacd;    /* 背景色指定 */
+    }
+    .tablefield {
+        padding-left: 405px;
+        margin-top: 50px;
+    }
+    .title{
+        font-size: 20px;
+    }
+    .errormessage {
+        padding-left: 570px;
+        transition: 1s;
+    }
+    .error {
+        background-color: pink;
+        list-style: none;
+        padding: 5px;
+        width: 205px
+    }
+    .button { 
+        width: 100%;
+    }
+    .button li {
+        list-style: none;
+        display: inline-block;
+    }
+    .list1 {
+        padding-left: 35%;
+    }
+    .aaa {
+        margin-top: 30px;
+        font-size: 25px;
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .btn-flat-simple {
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        padding: 2em 1.5em;
+        text-decoration: none;
+        color: #00BCD4;
+        background: #ECECEC;
+        transition: .4s;
+      }
+      
+      .btn-flat-simple:hover {
+        background: #00bcd4;
+        color: white;
+      }
+      .date li {
+          list-style: none;
+          display: inline;
+          margin: 10px;
+      }
+      .schedule {
+          margin-top: 20px;
+          margin-left: 450px;
+      }
+      .act {
+        margin-left: 510px;
+        margin-top: 20px;
+      }
+      .touroku {
+          margin-left: 710px;
+      }
 }
-.box:before, .box:after{
-    content: '';
-    position: absolute;
-    top: -10px;
-    width: 2px;
-    height: -webkit-calc(100% + 20px);
-    height: calc(100% + 20px);
-    background-color: black;
-}
-.box:before {
-    left: 10px;
-}
-.box:after {
-    right: 10px;
-}
-.box p {
-    text-align: center;
-    margin: 0; 
-    padding: 5px;
-}
-.register {
-    text-align: center;
-    font-size: 25px;
-    margin-top: 25px;
 
+@media screen and (max-width:480px){
+    table th {/*table内のthに対して*/
+        padding: 5px;/*上下左右10pxずつ*/
+        text-align: center;
+        background: skyblue;
+      }
+      
+      table td {/*table内のtdに対して*/
+        padding: 3px 10px;/*上下3pxで左右10px*/
+      }
+    .action {
+        width: 300px;
+    }
+    table {
+        text-align: center;
+        margin-right: 1px;
+    
+    }
+    tr:nth-child(odd) {
+        background-color:  #fffacd;    /* 背景色指定 */
+    }
+    .tablefield {
+        padding-left: 0px;
+        margin-top: 50px;
+    }
+    .title{
+        font-size: 20px;
+    }
+    .date li {
+        list-style: none;
+        margin-left: 25%;
+    }
+    .schedule {
+        margin-top: 10px;
+    }
+    .act {
+      margin-left: 50px;
+      margin-top: 10px;
+    }
+    .touroku {
+        margin-left: 45%;
+    }
+    .head {
+        display: none;
+    }
+    nav ul li {
+        display: inline-block;
+        font-size: 10px;
+        margin-right: 25px;
+    }
+    .button { 
+        width: 100%;
+    }
+    .button li {
+        list-style: none;
+        display: inline-block;
+    }
+    .list1 {
+        padding-left: 1%;
+    }
+    .aaa {
+        margin-top: 30px;
+        font-size: 25px;
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .btn-flat-simple {
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        padding: 2em 1.5em;
+        text-decoration: none;
+        color: #00BCD4;
+        background: #ECECEC;
+        transition: .4s;
+      }
+      
+      .btn-flat-simple:hover {
+        background: #00bcd4;
+        color: white;
+      }
+      .box1{
+        margin-top: 10px;
+        position: relative;
+        padding: 0.5em 1.5em;
+        border-top: solid 2px black;
+        border-bottom: solid 2px black;
+    }
+    .box1:before, .box1:after{
+        content: '';
+        position: absolute;
+        top: -10px;
+        width: 2px;
+        height: -webkit-calc(100% + 20px);
+        height: calc(100% + 20px);
+        background-color: black;
+    }
+    .box1:before {
+        left: 10px;
+    }
+    .box1:after {
+        right: 10px;
+    }
+    .box1 p {
+        text-align: center;
+        margin: 0; 
+        padding: 5px;
+    }
+    .login {
+        text-align: center;
+        font-size: 25px;
+        margin-top: 25px;
+    }
+    .log {
+        text-align: center;
+        padding: 5px;
+    }
+    .box{
+        margin-top:10px;
+        position: relative;
+        padding: 0.5em 0.5em;
+        border-top: solid 2px black;
+        border-bottom: solid 2px black;
+    }
+    .box:before, .box:after{
+        content: '';
+        position: absolute;
+        top: -10px;
+        width: 2px;
+        height: -webkit-calc(100% + 20px);
+        height: calc(100% + 20px);
+        background-color: black;
+    }
+    .box:before {
+        left: 10px;
+    }
+    .box:after {
+        right: 10px;
+    }
+    .box p {
+        text-align: center;
+        margin: 0; 
+        padding: 5px;
+    }
+    .register {
+        text-align: center;
+        font-size: 25px;
+        margin-top: 25px;
+    
+    }
+    .save {
+        text-align: center;
+        padding: 5px;
+    }
+    .error {
+        background-color: pink;
+        list-style: none;
+        padding: 5px;
+        width: 225px
+    }
 }
-.save {
-    text-align: center;
-    padding: 5px;
-}
-.box1{
-    margin:2em 35em;
-    position: relative;
-    padding: 0.5em 1.5em;
-    border-top: solid 2px black;
-    border-bottom: solid 2px black;
-}
-.box1:before, .box1:after{
-    content: '';
-    position: absolute;
-    top: -10px;
-    width: 2px;
-    height: -webkit-calc(100% + 20px);
-    height: calc(100% + 20px);
-    background-color: black;
-}
-.box1:before {
-    left: 10px;
-}
-.box1:after {
-    right: 10px;
-}
-.box1 p {
-    text-align: center;
-    margin: 0; 
-    padding: 5px;
-}
-.login {
-    text-align: center;
-    font-size: 25px;
-    margin-top: 25px;
-}
-.log {
-    text-align: center;
-    padding: 5px;
-}
-table th {/*table内のthに対して*/
-    padding: 5px;/*上下左右10pxずつ*/
-    text-align: center;
-    background: skyblue;
-  }
-  
-  table td {/*table内のtdに対して*/
-    padding: 3px 10px;/*上下3pxで左右10px*/
-  }
-.action {
-    width: 500px;
-}
-table {
-    text-align: center;
-    margin-right: 250px;
-
-}
-tr:nth-child(odd) {
-    background-color:  #fffacd;    /* 背景色指定 */
-}
-.tablefield {
-    padding-left: 405px;
-    margin-top: 50px;
-}
-.title{
-    font-size: 20px;
-}
-.errormessage {
-    padding-left: 570px;
-    transition: 1s;
-}
-.error {
-    background-color: pink;
-    list-style: none;
-    padding: 5px;
-    width: 205px
-}
-.button li {
-    list-style: none;
-    display: inline-block;
-}
-.list1 {
-    margin-left: 480px;
-    margin-right: 10px;
-}
-.list2 {
-    margin-right: 440px;
-    margin-left: 10px;
-}
-.aaa {
-    margin-top: 30px;
-    font-size: 25px;
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-.btn-flat-simple {
-    position: relative;
-    display: inline-block;
-    font-weight: bold;
-    padding: 2em 1.5em;
-    text-decoration: none;
-    color: #00BCD4;
-    background: #ECECEC;
-    transition: .4s;
-  }
-  
-  .btn-flat-simple:hover {
-    background: #00bcd4;
-    color: white;
-  }
-  .date li {
-      list-style: none;
-      display: inline;
-      margin: 10px;
-  }
-  .schedule {
-      margin-top: 20px;
-      margin-left: 450px;
-  }
-  .act {
-    margin-left: 510px;
-    margin-top: 20px;
-  }
-  .touroku {
-      margin-left: 710px;
-  }
