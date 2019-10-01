@@ -227,15 +227,9 @@ nav ul li {
         font-size: 10px;
         margin-right: 25px;
     }
-    .button { 
-        width: 100%;
-    }
     .button li {
         list-style: none;
         display: inline-block;
-    }
-    .list1 {
-        padding-left: 1%;
     }
     .aaa {
         margin-top: 30px;
@@ -247,7 +241,7 @@ nav ul li {
         position: relative;
         display: inline-block;
         font-weight: bold;
-        padding: 2em 1.5em;
+        padding: 2em 1em;
         text-decoration: none;
         color: #00BCD4;
         background: #ECECEC;
