@@ -176,8 +176,7 @@ nav ul li {
           margin-left: 710px;
       }
 }
-
-@media screen and (max-width:480px){
+@media screen and (max-width: 480px) { 
     table th {/*table内のthに対して*/
         padding: 5px;/*上下左右10pxずつ*/
         text-align: center;
